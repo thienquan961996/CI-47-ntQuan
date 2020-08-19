@@ -1,0 +1,49 @@
+.register-container{
+    height: 100vh;
+    background-image: url(../img/register-background.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .login-container{
+    height: 100vh;
+    background-image: url(../img/login-background.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .login-container #login-form{
+    height: 100vh;
+    background-color: #fff;
+    width: 30%;
+    padding: 50px 15px;
+  }
+  .login-container .login-header{
+    font-size: 40px;
+    color: #535353;
+    text-align: center;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+  }
+  .register-container #register-form {
+    height: 100vh;
+    background-color: #fff;
+    width: 30%;
+    padding: 50px 15px;
+  }
+  .register-container .register-header{
+    font-size: 40px;
+    color: #535353;
+    text-align: center;
+    font-weight: 600;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+  }
+  .name-wrapper,.form-action { 
+    display: flex;
+    justify-content: space-between;
+  }
+  .form-action {
+    align-items: center;
+  }
