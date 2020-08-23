@@ -16,8 +16,11 @@ view.setActiveScreen = (screenName) => {
         }
         controller.register(data)
       })
-      const redirectLoginPage = document.getElementById('redirect-login-page')
-      redirectLoginPage.addEventListener('click', () =>{
+      // document.getElementById('redirect-to-login').addEventListener('click', () =>{
+      //   view.setActiveScreen('loginPage')
+      // })  // cách 2
+      const redirectLoginPage = document.getElementById('redirect-to-login')
+      redirectLoginPage.addEventListener('click', () => {
         view.setActiveScreen('loginPage')
       })
       break;
@@ -32,10 +35,20 @@ view.setActiveScreen = (screenName) => {
         }
         controller.login(data)
       })
-      const redirectRegisterPage = document.getElementById('redirect-register-page')
+      // document.getElementById('redirect-to-register').addEventListener('click', () =>{
+      //   view.setActiveScreen('registerPage')
+      // })  // cách 2
+      const redirectRegisterPage = document.getElementById('redirect-to-register')
       redirectRegisterPage.addEventListener('click', () => {
         view.setActiveScreen('registerPage')
       })
       break;
+      case 'chatPage' :
+        document.getElementById('app').innerHTML = component.chatPage
+        document.getElementById('user').innerHTML = firebase.auth().currentUser.displayName
   }
+}
+
+view.setErrorMessage = (elementId, content) => {
+  document.getElementById(elementId).innerText = content
 }

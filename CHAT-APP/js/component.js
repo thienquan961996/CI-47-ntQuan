@@ -29,7 +29,7 @@ component.registerPage = `
     <div class="error" id="confirm-password-error"></div>
   </div>
   <div class="form-action">
-    <div>Already have an account ? <span class="cursor-pointer" id = "redirect-login-page">Login</span> </div>
+    <div>Already have an account ? <span class="cursor-pointer" id = "redirect-to-login">Login</span> </div>
     <button class="btn cursor-pointer" type="submit">Register</button>
   </div>
 </form>
@@ -50,9 +50,15 @@ component.loginPage = `
     </div>
     
     <div class="form-action">
-      <div>Don't have an account ? <span class="cursor-pointer" id="redirect-register-page">Register</span> </div>
+      <div>Don't have an account ? <span class="cursor-pointer" id="redirect-to-register">Register</span> </div>
       <button class="btn cursor-pointer" type="submit">Login</button>
     </div>
   </form>
 </div>
 `
+component.chatPage = 
+    `<div class="chatPage-container">
+    <div>
+      Welcome <span id="user"></span>
+    </div>
+  </div>`

@@ -1,23 +1,23 @@
-.register-container{
+.login-container{
     height: 100vh;
-    background-image: url(../img/register-background.jpg);
+    background-image: url(../img/login-background.jpg);
     background-size: cover;
     display: flex;
     justify-content: flex-end;
   }
-  .register-container #register-form {
-    height: 100vh;
-    background-color: #fff;
-    width: 30%;
-    padding: 50px 15px;
-  }
-  .register-container .register-header{
+  .login-container .login-header{
     font-size: 40px;
     color: #535353;
     text-align: center;
     font-weight: 600;
     font-family: sans-serif;
     margin-bottom: 20px;
+  }
+  .login-container #login-form {
+    height: 100vh;
+    background-color: #fff;
+    width: 30%;
+    padding: 50px 15px;
   }
   .name-wrapper,.form-action { 
     display: flex;
