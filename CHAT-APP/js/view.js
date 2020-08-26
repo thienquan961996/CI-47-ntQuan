@@ -43,12 +43,46 @@ view.setActiveScreen = (screenName) => {
         view.setActiveScreen('registerPage')
       })
       break;
-      case 'chatPage' :
-        document.getElementById('app').innerHTML = component.chatPage
-        document.getElementById('user').innerHTML = firebase.auth().currentUser.displayName
+    case 'chatPage':
+      document.getElementById('app').innerHTML = component.chatPage
+      const sendMessageForm = document.getElementById('send-message-form')
+      sendMessageForm.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const message = {
+          content: sendMessageForm.message.value,
+          owner: model.currentUser.email
+        }
+        const messageFromBot = {
+          content: sendMessageForm.message.value,
+          owner: 'Bot'
+        }
+        if (sendMessageForm.message.value == '') {
+          console.log('empty message')
+        } else {
+          view.addMessage(message)
+          view.addMessage(messageFromBot)
+        }
+        sendMessageForm.message.value = ''
+      })
+      break;
   }
 }
 
 view.setErrorMessage = (elementId, content) => {
   document.getElementById(elementId).innerText = content
+}
+view.addMessage = (message) => {
+  const messageWrapper = document.createElement('div')
+  messageWrapper.classList.add('message')
+  if (message.owner === model.currentUser.email) {
+    messageWrapper.classList.add('mine')
+    messageWrapper.innerHTML = `<div class = "content">${message.content}</div>`
+  } else {
+    messageWrapper.classList.add('their')
+    messageWrapper.innerHTML = `
+    <div class = "owner">${message.owner}</div>
+    <div class = "content">${message.content}</div>`
+  }
+  console.log(messageWrapper)
+  document.querySelector('.list-messages').appendChild(messageWrapper)
 }

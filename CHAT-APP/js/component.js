@@ -57,8 +57,22 @@ component.loginPage = `
 </div>
 `
 component.chatPage = 
-    `<div class="chatPage-container">
-    <div>
-      Welcome <span id="user"></span>
+    `<div class="chat-container">
+    <div class="header">
+      MindX chat
+    </div>
+    <div class="main">
+      <div class="conversation-detail">
+        <div class="conversation-title">First conversation</div>
+        <div class="list-messages">
+          
+        </div>
+        <form id="send-message-form">
+          <div class="input-wrapper">
+            <input type="text" placeholder="Type a message" name="message"></input>
+          </div>
+          <button type="submit"><i class="fa fa-paper-plane btn-send fa-fw"></i></button>
+        </form>
+      </div>
     </div>
   </div>`

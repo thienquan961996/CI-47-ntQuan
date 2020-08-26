@@ -13,20 +13,20 @@ model.register = async (data) => {
         console.log(err);
     }
 }
-model.login = async ({email, password}) =>{
+model.login = ({email, password}) =>{
     try{
-        const response = await firebase.auth().signInWithEmailAndPassword(email, password)
-        console.log(response);
-        if(response && response.user.emailVerified) {
-            model.currentUser = {
-                email : response.user.email,
-                displayName: response.user.displayName
-            }
-            console.log('Login Sucess')
-            view.setActiveScreen('chatPage')
-        }else{
-            alert('Please verify your email')
-        }
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        // console.log(response);
+        // if(response && response.user.emailVerified) {
+        //     model.currentUser = {
+        //         email : response.user.email,
+        //         displayName: response.user.displayName
+        //     }
+        //     console.log('Login Sucess')
+        //     view.setActiveScreen('chatPage')
+        // }else{
+        //     alert('Please verify your email')
+        // }   // đã check bên index.js
     } catch(err) {
         alert(err.message)
         console.log(err)

@@ -7,13 +7,37 @@
   <title>Document</title>
   <link rel="stylesheet" href="./css/login.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/chat.css">
 </head>
 
-<div class="chatPage-container">
-  <div>
-    Welcome <span id="user"></span>
+<div class="chat-container">
+  <div class="header">
+    MindX chat
+  </div>
+  <div class="main">
+    <div class="conversation-detail">
+      <div class="conversation-title">First conversation</div>
+      <div class="list-messages">
+        <div class="message mine">
+          <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum culpa hic expedita optio quasi, nulla fugit, repellat, soluta nobis odit possimus non harum deleniti ea quae. Temporibus dignissimos aliquid ut?</div>
+        </div>
+        <div class="message mine">
+          <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum culpa hic expedita optio quasi, nulla fugit, repellat, soluta nobis odit possimus non harum deleniti ea quae. Temporibus dignissimos aliquid ut?</div>
+        </div>
+        <div class="message their">
+          <div class="owner">abc@gmail.com</div>
+          <div class="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto commodi quod quo inventore magni repellendus veritatis error ad dignissimos. Totam at sequi nostrum. Quidem pariatur necessitatibus ducimus repellendus eum sed.</div>
+        </div>
+      </div>
+      <form id="send-message-form">
+        <div class="input-wrapper">
+          <input type="text" placeholder="Type a message" name="message"></input>
+        </div>
+        <button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+      </form>
+    </div>
   </div>
 </div>
-</body> 
+</body>
 
 </html>
