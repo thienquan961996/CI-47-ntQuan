@@ -56,11 +56,11 @@ view.setActiveScreen = (screenName) => {
           content: sendMessageForm.message.value,
           owner: 'Bot'
         }
-        if (sendMessageForm.message.value == '') {
-          console.log('empty message')
-        } else {
+        if (sendMessageForm.message.value.trim() !== '') {
           view.addMessage(message)
           view.addMessage(messageFromBot)
+        } else {
+          console.log('empty message')
         }
         sendMessageForm.message.value = ''
       })
