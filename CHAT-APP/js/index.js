@@ -9,7 +9,7 @@ window.onload = () => {
     appId: "1: 456944619036: web: 3162b27fe59fceadfd99d9"
   };
   firebase.initializeApp(firebaseConfig);
-  console.log(firebase.app());
+  // console.log(firebase.app());
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       model.currentUser = {
@@ -27,7 +27,7 @@ window.onload = () => {
       view.setActiveScreen('registerPage')
     }
   })
-  conversationFirestore()
+  // conversationFirestore()
   // templateFirestore()
 }
 
@@ -80,17 +80,4 @@ const getManyDocument = (response) =>{
 }  //ví dụ về database
 
 
-const conversationFirestore = async () =>{
-  const docId = '4X4QjBdJxhtOuh86yTe9'
-  const response = await firebase.firestore().collection('conversations').doc(docId).get()
-  const user = getOneDocument(response)
-  console.log(user)
-  const conversationTitle = document.getElementById('conversationTitle')
-  conversationTitle.innerText = user.title
-  for(const item of user.messages)
-  {
-    console.log(item.content)
-    view.addMessage(item)
-  }
-}
 

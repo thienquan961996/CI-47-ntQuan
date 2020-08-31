@@ -50,20 +50,22 @@ view.setActiveScreen = (screenName) => {
         e.preventDefault()
         const message = {
           content: sendMessageForm.message.value,
-          owner: model.currentUser.email
+          owner: model.currentUser.email,
+          createdAt : new Date().toISOString()
         }
         const messageFromBot = {
           content: sendMessageForm.message.value,
           owner: 'Bot'
         }
         if (sendMessageForm.message.value.trim() !== '') {
-          view.addMessage(message)
-          view.addMessage(messageFromBot)
+          model.addMessage(message)
         } else {
           console.log('empty message')
         }
         sendMessageForm.message.value = ''
       })
+      model.getConversation()
+      model.listenConversationChange()
       break;
   }
 }
@@ -85,4 +87,16 @@ view.addMessage = (message) => {
   }
   console.log(messageWrapper)
   document.querySelector('.list-messages').appendChild(messageWrapper)
+  
+}
+view.showCurrentConversation = () => {
+  for (message of model.currentConversation.messages) {
+    view.addMessage(message)
+  }
+  view.scrollToEndElement()
+}
+
+view.scrollToEndElement = () =>{
+  const element = document.querySelector('.list-messages')
+  element.scrollTop = element.scrollHeight
 }
