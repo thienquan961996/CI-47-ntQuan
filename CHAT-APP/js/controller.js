@@ -69,4 +69,18 @@ controller.login = ({email, password}) =>{
   }
 } // cách 2
    
+controller.newConversation = ({title, email}) => {
+  view.setErrorMessage('create-conversation-title-error', title === '' ? 'Please input conversation name' : '')
+  view.setErrorMessage('create-conversation-email-error', email === '' ? 'Please input friend email' : '')
+  
+  if(title !== '' && email !== '') {
+    const data = {
+      createdAt: (new Date()).toISOString(),
+      messages: [],
+      title: title,
+      users: [email, model.currentUser.email]
+    }
+    model.newConversation(data)
+  }
+}
   
