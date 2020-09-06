@@ -53,10 +53,10 @@ view.setActiveScreen = (screenName) => {
           owner: model.currentUser.email,
           createdAt: new Date().toISOString()
         }
-        const messageFromBot = {
-          content: sendMessageForm.message.value,
-          owner: 'Bot'
-        }
+        // const messageFromBot = {
+        //   content: sendMessageForm.message.value,
+        //   owner: 'Bot'
+        // }
         if (sendMessageForm.message.value.trim() !== '') {
           model.addMessage(message)
         } else {
