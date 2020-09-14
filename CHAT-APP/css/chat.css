@@ -24,7 +24,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    width: 85%;
+    width: 70%;
 }
 .chat-container .list-messages{
     flex-grow: 1;
@@ -92,7 +92,31 @@
 }
 .chat-container .aside-left .list-conversations .conversation{
     padding: 10px;
+    position: relative;
 }
 .chat-container .aside-left .list-conversations .conversation.current{
     background: #dbdbdb;
+}
+.chat-container .aside-right{
+    border-left: 1px solid #dbdbdb;
+    width: 15%;
+    padding: 10px;
+}
+.chat-container .aside-right .user-email{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.chat-container .notification{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #007cfd;
+    border-radius: 50%;
+    top: 18px;
+    right: 12px;
+    display: none;
+}
+.chat-container .aside-left .list-conversations{
+    height: calc( 100vh - 128px);
+    overflow: auto;
 }

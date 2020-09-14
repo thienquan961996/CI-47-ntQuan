@@ -69,18 +69,26 @@ controller.login = ({ email, password }) => {
   }
 } // cách 2
 
-controller.newConversation = ({ title, email }) => {
-  view.setErrorMessage('create-conversation-title-error', title === '' ? 'Please input conversation name' : '')
-  view.setErrorMessage('create-conversation-email-error', email === '' ? 'Please input friend email' : '')
-
-  if (title !== '' && email !== '') {
-    const data = {
-      createdAt: (new Date()).toISOString(),
-      messages: [],
-      title: title,
-      users: [email, model.currentUser.email]
-    }
-    model.newConversation(data)
+controller.createConversation = ({ title, email }) => {
+ if(title.trim() === ''){
+   view.setErrorMessage('create-conversation-title-error', 'please input title')
+ }else{
+   view.setErrorMessage('create-conversation-title-error', '')
+ }
+ if(email.trim() === ''){
+  view.setErrorMessage('create-conversation-email-error', 'please input email')
+}else{
+  view.setErrorMessage('create-conversation-email-error', '')
+}
+if(title.trim() !== '' && email.trim() !== ''){
+  model.createConversation({title, email})
+}
+}
+controller.addUser = (email) =>{
+  if(email.trim() === ''){
+    view.setErrorMessage('email-error', 'please input email')
+  }else{
+    view.setErrorMessage('email-error', '')
+    model.addUser(email)
   }
 }
-
