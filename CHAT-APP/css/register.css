@@ -26,6 +26,11 @@
   .form-action {
     align-items: center;
   }
-  /* .name-wrapper .input-wrapper{
+  .name-wrapper .input-wrapper{
     width: 48%;
-  } */
+  }
+  @media screen and (max-width: 768px){
+    .register-container #register-form{
+      width: 100%;
+    }
+  }

@@ -120,3 +120,42 @@
     height: calc( 100vh - 128px);
     overflow: auto;
 }
+
+@media screen and (max-width: 768px) {
+    .aside-right{
+        display: none;
+    }
+    .chat-container .conversation-detail{
+        width: 85%;
+    }
+    .num-of-user{
+        display: none;
+    }
+    .chat-container .aside-left .list-conversations .conversation{
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        padding: 0;
+        border: 1px solid #dbdbdb;
+        text-align: center;
+        line-height: 64px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    .chat-container .aside-left .list-conversations .conversation:first-child{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .chat-container .aside-left .list-conversations .conversation{
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+    }
+    .chat-container .notification{
+        height: 12px;
+        width: 12px;
+        top: 13px;
+        right: 0px;
+    }
+}
